@@ -1,0 +1,109 @@
+ver onde está: 
+git pull origin master
+
+criar nova branch: 
+git checkout -b issue_134_contraste_dias_agenda
+
+entrar em branch xpto
+git checkout xpto
+
+adicinar arquivos modificados: 
+git add .
+
+adicionar arquivos criados ou removidos: 
+git all
+
+configurar perfil: 
+git config --global user.email "caroline@sti.ufpb.br"
+
+configurar perfil: 
+git config --global user.name "Anne Caroline" 
+
+realizar commit: 
+git commit -m "ajustes" 
+
+enviar para o repositório:
+git push origin branch_xpto 
+
+git push origin issue_120_adicionar_tarefa_agenda
+
+verificar o cenário atual: 
+git status  
+
+ver log de commits: 
+git log --oneline --all --graph --decorate
+
+copiar: ctrl + shift + c 
+
+colar: ctrl + shift + v 
+
+sair: q
+
+limpar tela: ctrl + q
+
+colocar id tarefa no merge
+Após aprovado o merge Closed
+
+
+entrar na master após o término da tarefa
+git checkout master
+
+Exibe o que foi feito após o commit
+git log -p
+
+---------------------
+Dar permissão para o repositório GIT HUB
+
+Criar arquivo rsa específico para o github
+$ ssh-keygen -t rsa -b 4096 -C "carolsprak@gmail.com"
+Enter file in which to save the key (/c/Users/carol/.ssh/id_rsa): /c/Users/carol/.ssh/id_rsa_github
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/carol/.ssh/id_rsa_github.
+Your public key has been saved in /c/Users/carol/.ssh/id_rsa_github.pub.
+The key fingerprint is:
+SHA256:G/62etJD6AQIxpZtmZt+xDQQm7wOs5Ld6hpvmEr3s3w carolsprak@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+| . oo=           |
+|  *.=oo          |
+| o o+* .         |
+|    +.+          |
+|  o... .S.       |
+| o *. ..oo.      |
+|++o.o. ooo       |
+|++o.o. Eo.=      |
+|+++  ++ .=oo     |
++----[SHA256]-----+
+
+
+$ eval $(ssh-agent -s)
+
+Identificar o rsa usado pelo projeto (equivalente ao ssh key criado)
+$ ssh-add ~/.ssh/id_rsa_github
+
+Testar se a aplicação tem acesso ao repositório
+$ ssh -T git@github.com
+
+
+---------------------
+
+Para realizar o primeiro push na master do novo projeto no github quando já existe o projeto no PC
+
+Entrar na master 
+$git checkout master
+
+(Em master) Fazer merge da branch com a master
+$ git merge nome_branch_inicial
+
+(Em master) Enviar a branch para master via push
+$ git push origin master
+
+(Em master) Se não aceitar
+$ git push -f origin master
+
+
+
+
+
+
