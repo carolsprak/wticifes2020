@@ -21,6 +21,7 @@ class _ParticipanteScreenState extends State<ParticipanteScreen> {
   Future _cadastrar(BuildContext context) async {
     Map resultado = await Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
       return new ParticipanteCadastro();
+
     }));
   }
 }
