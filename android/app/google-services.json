@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "693899353152",
+    "firebase_url": "https://wticifes2020-73169.firebaseio.com",
+    "project_id": "wticifes2020-73169",
+    "storage_bucket": "wticifes2020-73169.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693899353152:android:b009d9f86350b89bad53a5",
+        "android_client_info": {
+          "package_name": "br.ufpb.sti.wticifes_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693899353152-dclqqiahg357rgt20ok59rh6kjruhgkg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ufpb.sti.wticifes_app",
+            "certificate_hash": "4676bf9e837bccce966e0719e2af31b23b555378"
+          }
+        },
+        {
+          "client_id": "693899353152-5cc2kirtlscsrjjc7huehbvjkf1g89fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0I-OLc52-VDXEwPXa1Q93JfekcTbWmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693899353152-5cc2kirtlscsrjjc7huehbvjkf1g89fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
