@@ -21,12 +21,8 @@ class _ParticipanteCadastroState extends State<ParticipanteCadastro> with Partic
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                Flexible(
-                    flex: 1,
-                    child: Center(
-                        child: Image.asset("assets/wticifes.png",
-                            width: 150.0, height: 150.0))),
-                Flexible(flex: 3, child: buildBody()),
+
+                Flexible(flex: 1, child: buildBody()),
               ],
             )));
   }
