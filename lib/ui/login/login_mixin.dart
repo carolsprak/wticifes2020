@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/ui/participante/participante_screen.dart';
-import 'package:wticifes_app/blocs/login/login_bloc.dart';
+import 'package:wticifes_app/controllers/login/login_controller.dart';
 import 'package:wticifes_app/helpers/utils.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flare_flutter/flare_actor.dart';
@@ -11,6 +11,7 @@ mixin LoginMixin {
 
   final TextEditingController _email_controller = new TextEditingController();
   final TextEditingController _senha_controller = new TextEditingController();
+
 
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();

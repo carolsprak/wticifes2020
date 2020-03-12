@@ -1,4 +1,4 @@
-ver onde está: 
+(em master) ver onde está:
 git pull origin master
 
 criar nova branch: 
