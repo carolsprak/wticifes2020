@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/firebase/firebase_service.dart';
+import 'package:wticifes_app/helpers/api_response.dart';
 import 'package:wticifes_app/helpers/utils.dart';
 import 'package:wticifes_app/models/participante/participante.dart';
 
@@ -12,7 +13,7 @@ class ParticipanteController extends StatefulWidget {
     return createState()._adicionarParticipante(formKey, participante);
   }
 
-  bool verificarAutenticacao(GlobalKey<FormState> formKey, Participante participante) {
+  Future<ApiResponse> verificarAutenticacao(GlobalKey<FormState> formKey, Participante participante) async {
     return createState()._verificarAutenticacao(formKey, participante);
   }
 }
@@ -46,30 +47,16 @@ class _ParticipanteControllerState extends State<ParticipanteController> {
     }
   }
 
-  bool _verificarAutenticacao(GlobalKey<FormState> formKey, Participante participante) {
+  Future<ApiResponse> _verificarAutenticacao(GlobalKey<FormState> formKey, Participante participante) async {
     final FormState form = formKey.currentState;
-    //databaseReference = database.reference().child('participante');
-    Participante participanteLogin;
 
     if (form.validate()) {
       form.save();
       form.reset();
-
-      _recuperarParticipantes();
-
-      /*if (participanteLogin.senha == participante.senha) {
-        return true;
-      }*/
+      return firebaseService.login(participante.email, participante.senha);
+    } else {
+      return null;
     }
-    return false;
-  }
-
-  void _recuperarParticipantes(){
-
-  //  databaseReference = database.reference();
-  //  Query query2 = databaseReference.child('participante').orderByChild('email').equalTo('carolsprak@email.com');
-
-  //  debugPrint(query2.onValue.first.toString());
 
   }
 

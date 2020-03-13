@@ -21,12 +21,12 @@ class FirebaseService {
       AuthResult result =
       await _auth.signInWithEmailAndPassword(email: email, password: senha);
       final FirebaseUser fUser = result.user;
-      print("Firebase Nome: ${fUser.displayName}");
-      print("Firebase Email: ${fUser.email}");
-      print("Firebase Instituicao: ${fUser.photoUrl}");
+      //print("Firebase Nome: ${fUser.displayName}");
+     // print("Firebase Email: ${fUser.email}");
+      //print("Firebase Instituicao: ${fUser.photoUrl}");
 
       // Cria um usuario do app
-      final user = Participante(
+     /* final user = Participante(
         fUser.displayName,
         fUser.email,
         "",
@@ -35,7 +35,7 @@ class FirebaseService {
         "",
         false
       );
-      user.save();
+      user.save();*/
 
       // Salva no Firestore
       saveUser(fUser);
@@ -100,7 +100,7 @@ class FirebaseService {
       DocumentReference refUser =
       Firestore.instance.collection("participante").document(firebaseUserUid);
       refUser.setData({
-        'nome': fUser.displayName,
+        'nome' : fUser.displayName,
         'email': fUser.email,
       });
     }
