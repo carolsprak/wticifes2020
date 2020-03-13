@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/models/participante/participante.dart';
+import 'package:wticifes_app/ui/atividade/atividade_screen.dart';
 import 'package:wticifes_app/ui/participante/participante_screen.dart';
 import 'package:wticifes_app/controllers/login/login_controller.dart';
 import 'package:wticifes_app/helpers/utils.dart';
-import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:flare_flutter/flare_actor.dart';
-import 'package:flare_flutter/flare_controller.dart';
+import 'package:wticifes_app/helpers/api_response.dart';
 
 mixin LoginMixin {
   BuildContext context;
@@ -18,7 +17,8 @@ mixin LoginMixin {
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
 
-  Widget buildBody() {
+  Widget buildBody(BuildContext context) {
+    this.context = context;
     return StreamBuilder<bool>(
       initialData: false,
       builder: (context, snapshot) {
@@ -44,6 +44,7 @@ mixin LoginMixin {
                         flex: 2,
                         fit: FlexFit.loose,
                         child: TextFormField(
+                          obscureText: true,
                           maxLength: 20,
                           decoration: InputDecoration(
                             hintText: 'Senha',
@@ -57,11 +58,7 @@ mixin LoginMixin {
                         fit: FlexFit.loose,
                         child: FlatButton(
                           padding: EdgeInsets.all(10.0),
-                          onPressed: () {
-                            LoginController()
-                                .verificarAutenticacao(formKey, participante);
-                            debugPrint(participante.email);
-                          },
+                          onPressed: _onClickLogin,
                           textColor: Colors.white70,
                           color: Colors.orangeAccent,
                           child: Text('Entrar'),
@@ -95,13 +92,43 @@ mixin LoginMixin {
   }
 
   void _formataParticipante() {
-    participante = Participante(
-        "",
-        _email_controller.text,
-        "",
-        "",
-        Utils.textToMd5(_senha_controller.text),
-        "",
-        false);
+    participante = Participante("", _email_controller.text, "", "",
+        Utils.textToMd5(_senha_controller.text), "", false);
+  }
+
+  void _onClickLogin() async {
+    _formataParticipante();
+    AlertDialog alerta;
+
+    ApiResponse response =
+        await LoginController().verificarLogin(formKey, participante);
+
+    if (response != null  && response.ok) {
+      alerta = alertaMensagem("Você realizou login com sucesso!");
+      showDialog(context: context, builder: (context) => alerta);
+
+      //Navigator.of(context).pushReplacement(new MaterialPageRoute(
+      //    builder: (BuildContext context) => AtividadeScreen()));
+    } else if (response != null ) {
+      alerta = alertaMensagem(response.msg);
+      showDialog(context: context, builder: (context) => alerta);
+    } else {
+      alerta = alertaMensagem("Preencha todos os campos em branco.");
+      showDialog(context: context, builder: (context) => alerta);
+    }
+  }
+
+  AlertDialog alertaMensagem(String msg) {
+    return  AlertDialog(
+      content: Text(msg),
+      actions: <Widget>[
+        FlatButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('OK'),
+        )
+      ],
+    );
   }
 }
