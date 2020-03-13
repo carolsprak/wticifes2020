@@ -1,8 +1,8 @@
-import 'dart:convert';
-import 'package:crypto/crypto.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/controllers/participante/participante_controller.dart';
+import 'package:wticifes_app/helpers/utils.dart';
 import 'package:wticifes_app/models/participante/participante.dart';
 
 mixin ParticipanteMixin {
@@ -121,9 +121,7 @@ mixin ParticipanteMixin {
         });
   }
 
-  String textToMd5(String text) {
-    return md5.convert(utf8.encode(text)).toString();
-  }
+
 
   void _formataParticipante() {
     participante = Participante(
@@ -131,8 +129,8 @@ mixin ParticipanteMixin {
         _email_controller.text,
         _instituicao_controller.text,
         _cargo_controller.text,
-        textToMd5(_senha_controller.text),
-        textToMd5(_confirma_controller.text),
+        Utils.textToMd5(_senha_controller.text),
+        Utils.textToMd5(_confirma_controller.text),
         _noticia);
   }
 }
