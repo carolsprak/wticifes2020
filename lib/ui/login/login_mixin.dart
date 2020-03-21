@@ -17,8 +17,8 @@ mixin LoginMixin {
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
 
-  Widget buildBody(BuildContext context) {
-    this.context = context;
+  Widget buildBody(BuildContext context, GlobalKey<ScaffoldState> globalKey) {
+      
     return StreamBuilder<bool>(
       initialData: false,
       builder: (context, snapshot) {
@@ -56,13 +56,18 @@ mixin LoginMixin {
                     Flexible(
                         flex: 2,
                         fit: FlexFit.loose,
-                        child: FlatButton(
-                          padding: EdgeInsets.all(10.0),
-                          onPressed: _onClickLogin,
-                          textColor: Colors.white70,
+                        child:  FlatButton(
+                   padding: EdgeInsets.all(10.0),
+                  textColor: Colors.white70,
                           color: Colors.orangeAccent,
                           child: Text('Entrar'),
-                        )),
+                  onPressed: () => _onClickLogin(globalKey, context),
+                  
+                )
+              
+             ),
+                        
+                       
                     Flexible(
                       flex: 1,
                       child: Center(
@@ -96,39 +101,37 @@ mixin LoginMixin {
         Utils.textToMd5(_senha_controller.text), "", false);
   }
 
-  void _onClickLogin() async {
+  void _onClickLogin(GlobalKey<ScaffoldState> globalKey, BuildContext context) async {
     _formataParticipante();
-    AlertDialog alerta;
-
-    ApiResponse response =
+    
+    if (formKey.currentState.validate()) {
+      ApiResponse response =
         await LoginController().verificarLogin(formKey, participante);
 
-    if (response != null  && response.ok) {
-      alerta = alertaMensagem("Você realizou login com sucesso!");
-      showDialog(context: context, builder: (context) => alerta);
+      if(response != null  && response.ok){
+        popMsg(globalKey, "Você realizou login com sucesso!");
 
-      //Navigator.of(context).pushReplacement(new MaterialPageRoute(
-      //    builder: (BuildContext context) => AtividadeScreen()));
-    } else if (response != null ) {
-      alerta = alertaMensagem(response.msg);
-      showDialog(context: context, builder: (context) => alerta);
+        Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+      return AtividadeScreen();
+    }));
+
+      } else if(response != null && response.msg != null){
+        popMsg(globalKey, response.msg);
+      } else {
+        popMsg(globalKey, "Não foi possível realizar o login");
+      }
+      
     } else {
-      alerta = alertaMensagem("Preencha todos os campos em branco.");
-      showDialog(context: context, builder: (context) => alerta);
+      popMsg(globalKey,"Preencha os campos em branco.");
+      
     }
   }
 
-  AlertDialog alertaMensagem(String msg) {
-    return  AlertDialog(
-      content: Text(msg),
-      actions: <Widget>[
-        FlatButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('OK'),
-        )
-      ],
-    );
-  }
+   SnackBar popMsg(GlobalKey<ScaffoldState> globalKey, String msg) {
+                  final snackBar = SnackBar(
+                          content: Text(msg));
+                        globalKey.currentState.showSnackBar(snackBar);
+                  return snackBar;
+  }  
+  
 }

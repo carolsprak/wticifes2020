@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:wticifes_app/helpers/api_response.dart';
@@ -21,22 +22,7 @@ class FirebaseService {
       AuthResult result =
       await _auth.signInWithEmailAndPassword(email: email, password: senha);
       final FirebaseUser fUser = result.user;
-      //print("Firebase Nome: ${fUser.displayName}");
-     // print("Firebase Email: ${fUser.email}");
-      //print("Firebase Instituicao: ${fUser.photoUrl}");
-
-      // Cria um usuario do app
-     /* final user = Participante(
-        fUser.displayName,
-        fUser.email,
-        "",
-        "",
-        "",
-        "",
-        false
-      );
-      user.save();*/
-
+      
       // Salva no Firestore
       saveUser(fUser);
 
@@ -98,7 +84,7 @@ class FirebaseService {
     if (fUser != null) {
       firebaseUserUid = fUser.uid;
       DocumentReference refUser =
-      Firestore.instance.collection("participante").document(firebaseUserUid);
+      Firestore.instance.collection("login").document(firebaseUserUid);
       refUser.setData({
         'nome' : fUser.displayName,
         'email': fUser.email,
@@ -106,7 +92,7 @@ class FirebaseService {
     }
   }
 
-  Future<ApiResponse> cadastrar(Participante participante) async {
+  Future<ApiResponse> cadastrar(Participante participante, GlobalKey<FormState> formKey) async {
     try {
       // Usuario do Firebase
       AuthResult result = await _auth.createUserWithEmailAndPassword(
@@ -128,6 +114,9 @@ class FirebaseService {
       databaseReference = database.reference().child('participante');
       databaseReference.push().set(participante.toJson());
 
+      formKey.currentState.save();
+      formKey.currentState.reset();
+
       // Resposta genérica
       return ApiResponse.ok(msg: "Participante criado com sucesso");
     } catch (error) {
@@ -137,7 +126,7 @@ class FirebaseService {
         print("Error Code ${error.code}");
 
         return ApiResponse.error(
-            msg: "Erro ao criar um usuário.\n\n${error.message}");
+            msg: "Erro ao criar um participante.\n\n Este e-mail já foi usado em nosso cadastro.");
       }
 
       return ApiResponse.error(msg: "Não foi possível criar um participante.");
