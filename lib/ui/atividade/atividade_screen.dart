@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/ui/ajuda/ajuda_screen.dart';
 import 'package:wticifes_app/ui/atividade/atividade_mixin.dart';
+import 'package:wticifes_app/ui/menu/menu_screen.dart';
 
 class AtividadeScreen extends StatefulWidget {
   @override
@@ -12,13 +13,11 @@ class _AtividadeScreenState extends State<AtividadeScreen> with AtividadeMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'WTICIFES 2020',
-        home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('WTICIFES 2020'),
+          title: Text('Programação'),
           backgroundColor: Colors.orangeAccent,
-          actions: <Widget>[
+          actions: <Widget>[  
             IconButton(
               icon: Icon(Icons.help),
               onPressed: () => AjudaScreen().abrirAjuda(context),
@@ -30,17 +29,13 @@ class _AtividadeScreenState extends State<AtividadeScreen> with AtividadeMixin {
               color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                      flex: 1,
-                      child: Center(
-                          child: Image.asset("assets/wticifes.png",
-                              width: 150.0, height: 150.0))),
+                children: <Widget>[                  
                   Flexible(flex: 2, child: buildBody()),
                 ],
               ),
             ),
-        )
+            drawer: MenuScreen(),
+       
     );
   }
 

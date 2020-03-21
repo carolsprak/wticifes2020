@@ -7,10 +7,12 @@ class ParticipanteCadastro extends StatefulWidget {
 }
 
 class _ParticipanteCadastroState extends State<ParticipanteCadastro> with ParticipanteMixin {
+  final globalKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
      return Scaffold(
+        key: globalKey,
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           title: Text("Cadastrar Participante"),
@@ -22,7 +24,7 @@ class _ParticipanteCadastroState extends State<ParticipanteCadastro> with Partic
             child: Column(
               children: <Widget>[
 
-                Flexible(flex: 1, child: buildBody()),
+                Flexible(flex: 1, child: buildBody(globalKey)),
               ],
             )));
   }

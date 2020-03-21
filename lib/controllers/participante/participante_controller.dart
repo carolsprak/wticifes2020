@@ -9,7 +9,7 @@ class ParticipanteController extends StatefulWidget {
   @override
   _ParticipanteControllerState createState() => _ParticipanteControllerState.instance;
 
-  adicionarParticipante(GlobalKey<FormState> formKey, Participante participante) {
+  Future<ApiResponse> adicionarParticipante(GlobalKey<FormState> formKey, Participante participante) {
     return createState()._adicionarParticipante(formKey, participante);
   }
 
@@ -36,15 +36,11 @@ class _ParticipanteControllerState extends State<ParticipanteController> {
     super.initState();
   }
 
-  void _adicionarParticipante(GlobalKey<FormState> formKey, Participante participante) {
-    final FormState form = formKey.currentState;
-
-    if (form.validate()) {
-      form.save();
-      form.reset();
-
-    firebaseService.cadastrar(participante);
-    }
+  Future<ApiResponse> _adicionarParticipante(GlobalKey<FormState> formKey, Participante participante) async {
+         
+    ApiResponse response = await firebaseService.cadastrar(participante, formKey);
+    return response; 
+    
   }
 
   Future<ApiResponse> _verificarAutenticacao(GlobalKey<FormState> formKey, Participante participante) async {

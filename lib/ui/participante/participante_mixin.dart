@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/controllers/participante/participante_controller.dart';
+import 'package:wticifes_app/helpers/api_response.dart';
 import 'package:wticifes_app/helpers/utils.dart';
 import 'package:wticifes_app/models/participante/participante.dart';
 
@@ -20,8 +21,10 @@ mixin ParticipanteMixin {
   final TextEditingController _confirma_controller =
       new TextEditingController();
   bool _noticia = true;
-
-  Widget buildBody() {
+ 
+  Widget buildBody(GlobalKey<ScaffoldState> globalKey) {
+    
+    this.context = context;
     return StreamBuilder<bool>(
         initialData: false,
         builder: (context, snapshot) {
@@ -107,30 +110,74 @@ mixin ParticipanteMixin {
               Flexible(
                   child: FlatButton(
                 padding: EdgeInsets.all(10.0),
-                onPressed: () {
-                  _formataParticipante();
-                  ParticipanteController()
-                      .adicionarParticipante(formKey, participante);
-                },
-                textColor: Colors.white70,
-                color: Colors.orangeAccent,
-                child: Text('Cadastrar'),
-              )),
-            ]),
-          ));
-        });
-  }
+                onPressed: () => _onClickCadastrar(globalKey), 
+                                textColor: Colors.white70,
+                                color: Colors.orangeAccent,
+                                child: Text('Cadastrar'),
+                              )),
+                            ]),
+                          ));
+                        });
+                  }
+                
+                
+                
+                  bool _formataParticipante() {
+                    if(_senha_controller.text != _confirma_controller.text){
+                      return false;
+                    } else {
+                      participante = Participante(
+                          _nome_controller.text,
+                          _email_controller.text,
+                          _instituicao_controller.text,
+                          _cargo_controller.text,
+                          Utils.textToMd5(_senha_controller.text),
+                          Utils.textToMd5(_confirma_controller.text),
+                          _noticia);
+                      return true;
+                    }
+                  }
+                
+                  void _onClickCadastrar(GlobalKey<ScaffoldState> globalKey)  async {
+                    
+                    if(_formataParticipante()) {                     
+                                       
+                      if (formKey.currentState.validate()) {
+                        ApiResponse response = await ParticipanteController()
+                                      .adicionarParticipante(formKey, participante);
+                        if (response != null ) {
+                            popMsg(globalKey, response.msg);                         
+                        } else {
+                          popMsg(globalKey, "Não foi possível realizar o cadastro.");
+                        }                                                
+                      } else {
+                          popMsg(globalKey, "Preencha os campos em branco.");
+                      }
+                    } else {
+                      popMsg(globalKey, "A senha não foi confirmada com mesmo valor.");
+                    }
+                    
+                }
 
+                SnackBar popMsg(GlobalKey<ScaffoldState> globalKey, String msg) {
+                  final snackBar = SnackBar(
+                          content: Text(msg));
+                        globalKey.currentState.showSnackBar(snackBar);
+                  return snackBar;
+                }
 
-
-  void _formataParticipante() {
-    participante = Participante(
-        _nome_controller.text,
-        _email_controller.text,
-        _instituicao_controller.text,
-        _cargo_controller.text,
-        Utils.textToMd5(_senha_controller.text),
-        Utils.textToMd5(_confirma_controller.text),
-        _noticia);
-  }
+                AlertDialog alertaMensagem(String msg) {
+                  return  AlertDialog(
+                   content: Text(msg),
+                   actions: <Widget>[
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('OK'),
+                    )
+                   ],
+                 );
+                }
+                  
 }

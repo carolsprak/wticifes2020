@@ -9,11 +9,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> with LoginMixin {
+  final globalKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'WTICIFES 2020',
         home: Scaffold(
+          key: globalKey,
           appBar: AppBar(
             title: Text('WTICIFES 2020'),
             backgroundColor: Colors.orangeAccent,
@@ -35,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> with LoginMixin {
                     child: Center(
                         child: Image.asset("assets/wticifes.png",
                             width: 150.0, height: 150.0))),
-                Flexible(flex: 2, child: buildBody(context)),
+                Flexible(flex: 2, child: buildBody(context, globalKey)),
               ],
             ),
           ),
