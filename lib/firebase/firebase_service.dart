@@ -118,7 +118,7 @@ class FirebaseService {
       formKey.currentState.reset();
 
       // Resposta genérica
-      return ApiResponse.ok(msg: "Participante criado com sucesso");
+      return ApiResponse.ok(msg: "Participante cadastrado com sucesso");
     } catch (error) {
       print(error);
 

@@ -13,11 +13,12 @@ class MenuScreen extends StatelessWidget {
     ),  
       accountName: Text(user.displayName ?? ""),
       accountEmail: Text(user.email),
-      currentAccountPicture: user.photoUrl != null
-          ? CircleAvatar(
-              backgroundImage: NetworkImage(user.photoUrl),
-            )
-          : FlutterLogo(),
+      currentAccountPicture: 
+          CircleAvatar(
+              backgroundColor: Colors.blueGrey,
+              radius: 50,
+              backgroundImage: AssetImage('assets/wticifes.png')              
+            )          
     );
   }
 
