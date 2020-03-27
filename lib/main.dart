@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:wticifes_app/ui/login/login_screen.dart';
 
 void main() async {

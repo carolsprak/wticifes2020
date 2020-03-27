@@ -1,11 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wticifes_app/controllers/login/login_controller.dart';
+import 'package:wticifes_app/controllers/participante/participante_controller.dart';
 import 'package:wticifes_app/firebase/firebase_service.dart';
 import 'package:wticifes_app/helpers/navigation.dart';
 import 'package:wticifes_app/models/participante/participante.dart';
+import 'package:wticifes_app/ui/agenda/agenda_screen.dart';
+import 'package:wticifes_app/ui/atividade/atividade_screen.dart';
 import 'package:wticifes_app/ui/login/login_screen.dart';
 
 class MenuScreen extends StatelessWidget {
+  
   UserAccountsDrawerHeader _header(FirebaseUser user) {
     return UserAccountsDrawerHeader(    
       decoration:  BoxDecoration(
@@ -40,12 +45,13 @@ class MenuScreen extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.list),
-              title: Text("Programação"),
-              //subtitle: Text("mais informações..."),
+              title: Text("Programação"),              
               trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                print("Item 0");
+              onTap: () {                
                 Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => 
+                  AtividadeScreen()));
               },
             ),
             ListTile(
@@ -53,9 +59,11 @@ class MenuScreen extends StatelessWidget {
               title: Text("Atividades Agendadas"),
               //subtitle: Text("mais informações..."),
               trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                print("Item 1");
+              onTap: () {                
                 Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => 
+                  AgendaScreen()));
               },
             ),
             ListTile(
@@ -115,8 +123,10 @@ class MenuScreen extends StatelessWidget {
 
   _onClickLogout(BuildContext context) {
     Participante.clear();
-    FirebaseService().logout();
+    LoginController().logout();
     Navigator.pop(context);
     push(context, LoginScreen(), replace: true);
   }
+
+ 
 }

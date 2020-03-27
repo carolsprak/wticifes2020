@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wticifes_app/ui/base_component.dart';
 import 'package:wticifes_app/ui/login/login_mixin.dart';
 import 'package:wticifes_app/ui/ajuda/ajuda_screen.dart';
 
