@@ -1,7 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:wticifes_app/firebase/firebase_service.dart';
-import 'package:wticifes_app/helpers/dados_evento.dart';
 
 class SalaController extends StatefulWidget {
   @override

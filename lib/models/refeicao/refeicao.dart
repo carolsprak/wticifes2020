@@ -3,8 +3,9 @@ import 'package:wticifes_app/helpers/prefs.dart';
 import 'dart:convert' as convert;
 
 class Refeicao {
-  String key;
+  String key;  
   String dia;
+  String data;
 	String tipo;
 	String cardapio;
 	String valor;
@@ -12,12 +13,13 @@ class Refeicao {
   String horario;
 	String ano_evento;
 
-  Refeicao(this.dia, this.tipo, this.cardapio, 
+  Refeicao(this.dia, this.data, this.tipo, this.cardapio, 
   this.valor, this.sobremesa, this.horario, this.ano_evento);
 
   Refeicao.fromSnapShot(DataSnapshot snapshot):
         key = snapshot.key,
         dia = snapshot.value['dia'],
+        data = snapshot.value['data'],
         tipo = snapshot.value['tipo'],
         cardapio = snapshot.value['cardapio'],
         valor = snapshot.value['valor'],
@@ -28,6 +30,7 @@ class Refeicao {
   toJson(){
     return {
       "dia" : dia,
+      "data" : data,
       "tipo" : tipo,
       "cardapio" : cardapio,
       "valor" : valor,
@@ -39,6 +42,7 @@ class Refeicao {
 
   Refeicao.fromJson(Map<String, dynamic> json) {
     dia = json['dia'];
+    data = json['data'];
     tipo = json['tipo'];
     cardapio = json['cardapio'];
     valor = json['valor'];
@@ -71,7 +75,7 @@ class Refeicao {
 
   @override
   String toString() {
-    return 'Refeicao{dia: $dia, cardapio: $cardapio}';
+    return 'Refeicao{data: $data, cardapio: $cardapio}';
   }
 
 }
