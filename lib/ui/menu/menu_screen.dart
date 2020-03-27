@@ -8,6 +8,7 @@ import 'package:wticifes_app/models/participante/participante.dart';
 import 'package:wticifes_app/ui/agenda/agenda_screen.dart';
 import 'package:wticifes_app/ui/atividade/atividade_screen.dart';
 import 'package:wticifes_app/ui/login/login_screen.dart';
+import 'package:wticifes_app/ui/refeicao/refeicao_screen.dart';
 import 'package:wticifes_app/ui/transporte/transporte_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -84,12 +85,14 @@ class MenuScreen extends StatelessWidget {
               title: Text("Refeição do Dia"),
               //subtitle: Text("mais informações..."),
               trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                print("Item 3");
+              onTap: () {                
                 Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => 
+                  RefeicaoScreen()));
               },
             ),
-            ListTile(
+            /*ListTile(
               leading: Icon(Icons.event_note),
               title: Text("Notícias"),
               //subtitle: Text("mais informações..."),
@@ -98,7 +101,7 @@ class MenuScreen extends StatelessWidget {
                 print("Item 4");
                 Navigator.pop(context);
               },
-            ),
+            ),*/
             Divider(
               color: Colors.grey,
             ),
