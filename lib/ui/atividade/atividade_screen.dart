@@ -44,9 +44,9 @@ with AtividadeMixin, SingleTickerProviderStateMixin<AtividadeScreen> {
                   ])
         ),
         body: TabBarView(children: [
-                  diaUm(),
-                  diaDois(),
-                  diaTres()
+                  diaEvento("1"),
+                  diaEvento("2"),
+                  diaEvento("3"),
                   ]), 
         drawer: MenuScreen(),
        

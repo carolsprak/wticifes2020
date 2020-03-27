@@ -8,9 +8,10 @@ class Atividade {
   String horario;
   String palestrantes;
   String tipo;
+  String ano_evento;
   Sala sala;
 
-  Atividade(this.assunto, this.dia, this.horario, this.palestrantes, this.tipo, this.sala);
+  Atividade(this.assunto, this.dia, this.horario, this.palestrantes, this.tipo, this.ano_evento, this.sala);
 
   Atividade.fromSnapShot(DataSnapshot snapshot):
         key = snapshot.key,
@@ -19,6 +20,7 @@ class Atividade {
         horario = snapshot.value['horario'],
         palestrantes = snapshot.value['palestrantes'],
         tipo = snapshot.value['tipo'],
+        ano_evento = snapshot.value['ano_evento'],
         sala = snapshot.value['sala'];
 
   toJson(){
@@ -28,6 +30,7 @@ class Atividade {
       "horario" : horario,
       "palestrantes" : palestrantes,
       "tipo" : tipo,
+      "ano_evento" : ano_evento,
       "sala" : sala
     };
   }

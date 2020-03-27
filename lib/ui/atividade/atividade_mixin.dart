@@ -1,21 +1,39 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:wticifes_app/controllers/atividade/atividade_controller.dart';
+import 'package:wticifes_app/controllers/sala/sala_controller.dart';
+import 'package:wticifes_app/helpers/dados_evento.dart';
 
 mixin AtividadeMixin {
-   
-  Widget diaUm() {
 
-    return StreamBuilder<bool>(
+  Future<DataSnapshot> salasPorAno = SalaController().getSalasPorAno(ANO_EVENTO);  
+  List listaSalas = List();
+
+  Future<DataSnapshot> atividadesPorAno = AtividadeController().getAtividadesPorAno(ANO_EVENTO);  
+  List listaAtividades = List();
+
+  Widget diaEvento(String dia) {      
+
+    return FutureBuilder(      
       initialData: false,
+      future: SalaController().getSalasPorAno(ANO_EVENTO),
       builder: (context, snapshot) {
+        salasPorAno.then(
+          (DataSnapshot dados) {
+            List<dynamic> salas = dados.value;            
+            salas.forEach((sala) {
+              listaSalas.add(sala);              
+          });
+        });
+      
         return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(          
         backgroundColor: Color(0xffE0E7EE),
           body: TabBarView(            
             children: [
-              salaUm(1),              
-              salaDois(1),
-              salaTres(1)
+              atividadeSala("1", dia, ANO_EVENTO),              
+              atividadeSala("2", dia, ANO_EVENTO)              
               ],
           ),
           bottomNavigationBar: 
@@ -24,104 +42,68 @@ mixin AtividadeMixin {
               indicatorColor: Color(0xffFF6600),
               labelColor: Color(0xffFF6600),
               tabs: [
-                Tooltip( message: "Sala Jacumã", child: Tab(text:  "Jacumã")),
-                Tooltip(message: "Sala Tabatinga", child: Tab(text: "Tabatinga")),
-                Tooltip(message: "Sala Tambaba", child: Tab(text: "Tambaba")),
+                Tooltip(message: "Sala ${listaSalas.length > 1 ? listaSalas[0]["nome"] : ""}", child: Tab(text: "${listaSalas.length > 1 ? listaSalas[0]["nome"] : ""}")),
+                Tooltip(message: "Sala ${listaSalas.length > 1 ? listaSalas[1]["nome"] : ""}", child: Tab(text: "${listaSalas.length > 1 ? listaSalas[1]["nome"] : ""}"))
         ])
         ));
-      }
+      }       
     );
-
-  }
-  
-  Widget diaDois() {
-
-    return StreamBuilder<bool>(
-      initialData: false,
-      builder: (context, snapshot) {
-        return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-          backgroundColor: Color(0xffE0E7EE),
-          body: TabBarView(          
-            children: [
-              salaUm(2),              
-              salaDois(2)
-              ],
-          ),
-          bottomNavigationBar: 
-            TabBar(
-              unselectedLabelColor: Color(0xff5A80B9),
-              indicatorColor: Color(0xffFF6600),
-              labelColor: Color(0xffFF6600),
-              tabs: [
-                Tooltip( message: "Sala Jacumã", child: Tab(text:  "Jacumã")),
-                Tooltip(message: "Sala Tabatinga", child: Tab(text: "Tabatinga"))
-        ])
-        ));
-      }
-    );
-
-  }
-  
-  Widget diaTres() {
-
-    return StreamBuilder<bool>(
-      initialData: false,
-      builder: (context, snapshot) {
-        return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-          backgroundColor: Color(0xffE0E7EE),
-          body: TabBarView(
-            children: [
-              salaUm(3),              
-              salaDois(3),              
-              ],
-          ),
-          bottomNavigationBar: 
-            TabBar(
-              unselectedLabelColor: Color(0xff5A80B9),
-              indicatorColor: Color(0xffFF6600),
-              labelColor: Color(0xffFF6600),
-              tabs: [
-                Tooltip( message: "Sala Jacumã", child: Tab(text:  "Jacumã")),
-                Tooltip(message: "Sala Tabatinga", child: Tab(text: "Tabatinga"))                
-        ])
-        ));
-      }
-    );
+    
 
   }
 
-  Widget salaUm(int i) {
-    return StreamBuilder<bool>(
+  Widget atividadeSala(String sala, String dia, String ano) {   
+
+    debugPrint("DIA $dia SALA $sala");    
+
+    return FutureBuilder(
       initialData: false,
+      future: AtividadeController().getAtividadesPorAno(ANO_EVENTO),
       builder: (context, snapshot) {
-        return Container(color: Colors.white,
-        child: Text('Sala 1', textAlign: TextAlign.center , style: TextStyle(fontSize: 20),),);
+        atividadesPorAno.then(
+          (DataSnapshot dados) {
+            listaAtividades = List();
+            List<dynamic> atividades = dados.value;                    
+            atividades.forEach((atividade) {              
+              if (atividade["dia"] == dia && atividade["sala"] == sala){                
+                listaAtividades.add(atividade);                
+              }      
+          });          
+        });
+
+        return ListView.builder(
+            shrinkWrap: true,
+            itemCount: listaAtividades.length,
+            itemBuilder: (BuildContext context, int index) {                
+                return Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Text("${listaAtividades[index]["horario"]}", style: TextStyle(color: Colors.indigo[600])),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Text("${listaAtividades[index]["assunto"]}", style: TextStyle(fontWeight: FontWeight.bold),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Text("${listaAtividades[index]["palestrantes"]}"),
+                      ),                   
+                      ],
+                  ),
+                ),
+                );
+            });            
       }
+      
     );
 
   } 
   
-  Widget salaDois(int i) {
-    return StreamBuilder<bool>(
-      initialData: false,
-      builder: (context, snapshot) {
-        return Container(color: Colors.white,
-        child: Text('Sala 2', textAlign: TextAlign.center , style: TextStyle(fontSize: 20),),);
-      }
-    );
-  } 
-
-  Widget salaTres(int i) {
-    return StreamBuilder<bool>(
-      initialData: false,
-      builder: (context, snapshot) {
-        return Container(color: Colors.white,
-        child: Text('Sala 3', textAlign: TextAlign.center , style: TextStyle(fontSize: 20),),);
-      }
-    );
-  } 
 }
+
+ 

@@ -1,0 +1,920 @@
+{ 
+  "refeicao": [
+    {
+	  "dia": "02/06/2019",
+	  "tipo": "Almoço",
+	  "cardapio": "Feijão Tropeiro / Feijão Carioca \n Arroz Branco / Arroz de Cenoura \n Penne Quatro Queijos / Espaguete ao Sugo \n Salada Primavera / Salada Caesar \n Frango Grelhado / Lombo ao Molho Madeira",
+	  "valor": "R$ 30,00",
+	  "sobremesa": "Pudim de Leite",
+      "horario": "12h às 14h",
+	  "ano_evento": "2019"
+    },
+	{
+	  "dia": "03/06/2019",
+	  "tipo": "Almoço",
+	  "cardapio": "Feijão Preto / Feijão Carioca \n Arroz Branco / Arroz Integral \n Fetuccine Quatro Queijos / Espaguete à Bolonhesa \n Salada Haivaina / Salada Verde \n Frango Grelhado / Peixe Grelhado",
+	  "valor": "R$ 30,00",
+	  "sobremesa": "Bolo de Pote",
+      "horario": "12h às 14h",
+	  "ano_evento": "2019"
+    },
+	{
+	  "dia": "04/06/2019",
+	  "tipo": "Almoço",
+	  "cardapio": "Rubacão / Feijão Carioca \n Arroz Branco / Arroz de de Brócolis \n Penne Bolonhesa / Espaguete ao alho e óleo \n Salada Maionese / Salada Caesar \n Carne de Sol / Bacalhao à Brasileira",
+	  "valor": "R$ 30,00",
+	  "sobremesa": "Mousse Maracujá",
+      "horario": "12h às 14h",
+	  "ano_evento": "2019"
+    }
+  ],
+  "transporte": [
+    {
+	  "local_saida": "Hotel Manaíra",
+	  "local_chegada": "Centro Convenções",
+	  "intinerario": "Hotel Manaíra - Hotel Village - Centro de Convenções",
+	  "horario_saida": "07:00h",
+	  "horario_chegada": "07:40h",
+      "linha": "Azul",
+	  "ano_evento": "2019"
+    },
+	{
+	  "local_saida": "Hotel Cabo Branco",
+	  "local_chegada": "Centro Convenções",
+	  "intinerario": "Hotel Cabo Branco - Hotel Ibis - Centro de Convenções",
+	  "horario_saida": "07:20h",
+	  "horario_chegada": "08:00h",
+      "linha": "Verde",
+	  "ano_evento": "2019"
+    }
+  ],
+  "sala": [
+    {
+	  "id": "1",
+	  "ano_evento": "2019",
+      "nome": "Jacumã"      
+    },
+    {
+	  "id": "2",
+	  "ano_evento": "2019",
+      "nome": "Tabatinga"      
+    }
+  ],
+  "atividade": [    
+    {
+      "assunto": "Boas vindas do V Encontro de Escritório de Processos – V EEP",
+      "dia": "1",
+      "horario": "08:15h às 08:30h",
+      "palestrantes": "",
+      "tipo": "Abertura",
+	  "ano_evento": "2019",
+      "sala": "1"
+    },
+    {
+      "assunto": "Análise do Processo de Interações Acadêmicas Através do Mapeamento de Fluxo de Valor na UFRGS",
+      "dia": "1",
+      "horario": "08:30h às 08:50h",
+      "palestrantes": "Marlon Soliman, João Francisco da F. Vieira, Nicolas Dentzuk, Erica K. de Oliveira, Priscilla F. dos Reis Pontes, Éverson Josué Santos (UFRGS)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Implementação de novo fluxo de processo: Case Aula de Campo da UFMT",
+      "dia": "1",
+      "horario": "08:50h às 09:10h",
+      "palestrantes": "Anne C. B. Cardoso, Cleiton D. da Silva, Thais Fernanda B. da Silva, Greice de Souza Arruda, Thiago M. Ventura, Leandro C. Garcia (UFMT)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Processo de Criação de um Novo Regulamento de Graduação Essencial para a Implantação do SIGAA",
+      "dia": "1",
+      "horario": "09:10h às 09:30h",
+      "palestrantes": "Anne C. O. Rocha, Raphael F. de A. Patrício, José A. L. B. de C. Filho, Fabiana F. do Nascimento, Ayrton N. de S. Silva (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Aplicação da Gestão de Processos em uma Instituição Federal de Ensino Superior: o caso da Divisão de Orçamento da UFERSA",
+      "dia": "1",
+      "horario": "09:30h às 09:50h",
+      "palestrantes": "Lívia R. Barreto, Geisa M. R. de Vasconcelos, Amanda Braga Marques (UFERSA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Aplicação de BPM na gestão do TED estabelecido entre o INCRA e a UFMT",
+      "dia": "1",
+      "horario": "09:50h às 10:10h",
+      "palestrantes": "Maurício F. L. Pereira, Olivan Rabêlo, Nilton H. Takagi, Anne C. B. Cardoso, Josiel M. Figueiredo (UFMT)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Melhoria do Processo de Pagamento de Fornecedores do Restaurante Universitário da UFRGS.",
+      "dia": "1",
+      "horario": "10:10h às 10:30h",
+      "palestrantes": "João F. Vieira, Priscilla F. Pontes, Marlon Soliman, Éverson Santos, Erica K. de Oliveira (UFRGS)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Coffe Break",
+      "dia": "1",
+      "horario": "10:30h às 11:00h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Execução de Melhoria Contínua Baseado em BPMN e Indicadores na Gestão de Serviços de TIC: Estudo de caso na Diretoria de Sistemas do NTI/UFPE",
+      "dia": "1",
+      "horario": "11:00h às 11:20h",
+      "palestrantes": "Renato V. Mendes, Suzanna S. Dantas (UFPE)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Monitoramento de indicadores de processos com uso de Business Intelligence (BI).",
+      "dia": "1",
+      "horario": "11:20h às 11:40h",
+      "palestrantes": "Beatriz S. Seidel, Vanessa G. Kinoshita, João C. S. O. Matos, Reinilton S. Juvenal, Naícia K. F. S. B. T. Caten, Leriane S. Cardozo  (UFOB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "O mapeamento de processos como elemento facilitador no levantamento e elicitação de requisitos do Sistema de Gestão da Universidade Federal de Juiz de Fora",
+      "dia": "1",
+      "horario": "11:40h às 12:00h",
+      "palestrantes": "Leonardo Ciuffo, Fábio Silva de Figueiredo, Rafael Gurgel Valente Papa (UFJF)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Google for Education: As vantagens da Educação Digital!",
+      "dia": "1",
+      "horario": "12:00h às 12:15h",
+      "palestrantes": "Daniel Garrido, Tecnoset – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Almoço Livre",
+      "dia": "1",
+      "horario": "12:15h às 14:00h",
+      "palestrantes": "",
+      "tipo": "Almoço",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Apresentação do Repositório de Processos – Forplad",
+      "dia": "1",
+      "horario": "14:00h às 14:30h",
+      "palestrantes": "Frank Leonardo Casado – Pró-reitor de Planejamento da Universidade Federal de Santa Maria",
+      "tipo": "Palestra",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Aplicação de Data Science e Inteligência Artificial na Educação",
+      "dia": "1",
+      "horario": "14:30h às 14:45h",
+      "palestrantes": "Gleydson Lima, CEO da ESIG – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Grau de Maturidade em Processos: um estudo da evolução da Gestão por Processos na UFJF",
+      "dia": "1",
+      "horario": "14:45h às 15:05h",
+      "palestrantes": "Fábio Silva de Figueiredo, Leonardo Ciuffo, Alcimar Honório, Wagner Ramalho (UFJF)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Incorporando a Gestão de Riscos à Gestão por Processos na Universidade Federal de Santa Maria – UFSM",
+      "dia": "1",
+      "horario": "15:05h às 15:25h",
+      "palestrantes": "Evandro G. Flores, Frank L. Casado, Daniele M. Rizzetti, Jonas C. Macedo, Taiani B. Kienetz, Rafael F. Neves (UFSM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Modelo de Maturidade em Mapeamento de Processos (M3P): Proposta e Aplicação na UFCSPA",
+      "dia": "1",
+      "horario": "15:25h às 15:45h",
+      "palestrantes": "Juliana S. Herbert, Andressa Bortolaso de Oliveira, Marilia Rosa Silveira, Rodrigo de Farias Giglio (UFCSPA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Coffe Break",
+      "dia": "1",
+      "horario": "15:45h às 16:15h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Cerimônia de Abertura do XIV WTICIFES",
+      "dia": "1",
+      "horario": "17:00h às 18:00h",
+      "palestrantes": "",
+      "tipo": "Abertura",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Inovação na Gestão Pública – integrando processos, sistemas e órgãos para gerar valor ao cidadão e servidor",
+      "dia": "1",
+      "horario": "18:00h às 19:10h",
+      "palestrantes": "Thiago Ayres",
+      "tipo": "Palestrante",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Segurança em Universidades na era IoT, desenvolvimento e modernização da TI sem barreiras com soluções Aruba Networks",
+      "dia": "1",
+      "horario": "19:10h às 19:30h",
+      "palestrantes": "Peterson Muzeli, Telc – Patrocinador Von Newmann",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Coquetel de Abertura",
+      "dia": "1",
+      "horario": "20:00h às 23:00h",
+      "palestrantes": "",
+      "tipo": "Coquetel",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Workshop Gestão de Mudanças: os desafios da liderança transformadora (público Gestores de TI)",
+      "dia": "1",
+      "horario": "08:30h às 10:30h",
+      "palestrantes": "Ana Salomão – Consultoria Laje e Nilton Hideki Takagi – UFMT",
+      "tipo": "Oficina",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Coffe Break",
+      "dia": "1",
+      "horario": "10:30h às 11:00h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Workshop Gestão de Mudanças: os desafios da liderança transformadora (público Gestores de TI)",
+      "dia": "1",
+      "horario": "11:00h às 12:00h",
+      "palestrantes": "Ana Salomão – Consultoria Laje e Nilton Hideki Takagi – UFMT",
+      "tipo": "Oficina",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Almoço Livre",
+      "dia": "1",
+      "horario": "12:15h às 14:00h",
+      "palestrantes": "",
+      "tipo": "Almoço",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Analisa UFG – Plataforma de Análise de Dados da UFG",
+      "dia": "2",
+      "horario": "09:00h às 09:20h",
+      "palestrantes": "Victor G. Bento, Ricardo H. D. Borges, Rogério R. Carvalho, Dannyel C. Fonseca (UFG)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "SINAPSE: Sistema Integrado de Acompanhamento de Projetos e Serviços",
+      "dia": "2",
+      "horario": "09:20h às 09:40h",
+      "palestrantes": "Danniel Rocha, Euclydes Melo, Luiz Fernando, Marcos Raniere, Matheus Campanhã, Taison Almeida (UFPI)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Método Push de atribuição de tarefas utilizado no desenvolvimento de software por um time autogerenciável",
+      "dia": "2",
+      "horario": "09:40h às 10:00h",
+      "palestrantes": "Danniel Rocha, Euclydes Melo, Luiz Fernando, Marcos Raniere, Matheus Souza, Taison Almeida (UFPI)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Case de implantação modularizada do GLPI com foco na satisfação do usuário final",
+      "dia": "2",
+      "horario": "10:00h às 10:20h",
+      "palestrantes": "Elton P. Rosa (UFVJM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Coffe Break e Sessão de Pôsteres",
+      "dia": "2",
+      "horario": "10:20h às 10:50h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Garantindo a disponibilidade das aplicações",
+      "dia": "2",
+      "horario": "10:50h às 11:05h",
+      "palestrantes": "Marcus Vinicius Ribeiro, Teltec – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "O Paradigma de Arquitetura Corporativa para enfrentar os desafios de interoperabilidade entre as IFES e destas com Órgãos Públicos",
+      "dia": "2",
+      "horario": "11:05h às 11:45h",
+      "palestrantes": "Vanessa Tavares (Consultoria SE7Ti)",
+      "tipo": "Palestra",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "O impacto da transformação digital no futuro da educação brasileira",
+      "dia": "2",
+      "horario": "11:45h às 12:15h",
+      "palestrantes": "Wagner Alledo, HT Solutions – Patrocinador Diamante",
+      "tipo": "Palestra",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Sorteio no Auditório",
+      "dia": "2",
+      "horario": "12:15h às 12:20h",
+      "palestrantes": "",
+      "tipo": "Sorteio",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Almoço Livre",
+      "dia": "2",
+      "horario": "12:20h às 14:00h",
+      "palestrantes": "",
+      "tipo": "Almoço",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Aplicação de Testes Automáticos com Selenium WebDriver: Um Relato de Experiência no SIGAA",
+      "dia": "2",
+      "horario": "14:00h às 14:20h",
+      "palestrantes": "Alan B. de Pontes, Anne C. O. Rocha, Raphael F. de A. Patrício (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Transformação de Projetos de Sistemas de Informação da UTFPR através de Frameworks Modernos",
+      "dia": "2",
+      "horario": "14:20h às 14:40h",
+      "palestrantes": "Diogo A. B. Pereira, Marcelo A. Faveri, Rui P. Leite e William H. dos Santos (UTFPR)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Integração das Bases de Login e Senha dos Sistemas da Universidade de Brasília – UnB",
+      "dia": "2",
+      "horario": "14:40h às 15:00h",
+      "palestrantes": "Renato Carauta Ribeiro, Everton de Vargas Agilar (UNB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Universidade Digital: preservando e disponibilizando a produção científica através do Repositório Institucional",
+      "dia": "2",
+      "horario": "15:00h às 15:20h",
+      "palestrantes": "Italo Silva, Diogo Cabral, Marcos Neto, Rômulo Nunes (UFAL)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "A Importância da Informatização e da Acessibilidade para o Processo de Avaliação de Desempenho na UFMT",
+      "dia": "2",
+      "horario": "15:20h às 15:40h",
+      "palestrantes": "João Vitor Barbosa Viana, Sandra Alves Rodrigues dos Santos, Delvan Luis de Souza, Raphael Pires Ferreira, Eunice Pereira dos Santos Nunes (UFMT)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Uma solução de automatização no processo de pagamento de bolsas de auxílio",
+      "dia": "2",
+      "horario": "15:40h às 16:00h",
+      "palestrantes": "André Thiago Pereira Rodrigues, Raphael Pires Ferreira (UFMT)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Coffe Break",
+      "dia": "2",
+      "horario": "16:00h às 16:30h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Transformação digital com a NUTANIX",
+      "dia": "2",
+      "horario": "16:30h às 16:50h",
+      "palestrantes": "Luciano Freitas, Approach Tecnologia – Patrocinador Diamante Plus",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Painel “Melhoria de Processos da Administração Pública”",
+      "dia": "2",
+      "horario": "16:50h às 18:15h",
+      "palestrantes": "José Assumpção Rodrigues Almeida (ANAC), Ana Vitória Piaggio Albuquerque (CGU) e Júlio César Elpídio de Medeiros (Ministério da Economia)",
+      "tipo": "Painel",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Proteção de Dados: Uma visão moderna sobre a melhor forma de proteger suas informações com as soluções DELLEMC",
+      "dia": "2",
+      "horario": "18:15h às 18:30h",
+      "palestrantes": "Edvan Dors, Perfil – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Sorteio no Auditório",
+      "dia": "2",
+      "horario": "18:30h às 18:35h",
+      "palestrantes": "",
+      "tipo": "Sorteio",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "O uso prático do trafic control (tc) para evitar o colapso de links de Internet em regiões próximas a áreas residenciais",
+      "dia": "2",
+      "horario": "09:00h às 09:20h",
+      "palestrantes": "Rômulo N. de Oliveira, Deive F. V. Gomes, Carlos R. A. da Silva, Icaro dos S. Silva (UFAL)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2"
+    },
+	{
+      "assunto": "Implantação da rede sem fio na UFCA",
+      "dia": "2",
+      "horario": "09:20h às 09:40h",
+      "palestrantes": "Taciano P de A Alcântara, Marcos Iury F M da Silva, Herbert N Onofre (UFCA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "O uso de containers e máquinas virtuais para a otimização de custos e serviços no Governo Federal. Uma análise comparativa",
+      "dia": "2",
+      "horario": "09:40h às 10:00h",
+      "palestrantes": "Felipe C. Costa Alves, Jean Caminha, Renan Susuki, Allan Gonçalves, Hernane Junior, Tierry Lincoln, Roberto Benedito (UFMT)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Moodle: Arquitetura redundante e escalável para alta demanda de acesso",
+      "dia": "2",
+      "horario": "10:00h às 10:20h",
+      "palestrantes": "André Vinícius Farias Sousa, Edmilson Alves do Nascimento, Gustavo Pinho Gomes dos Santos, Michel Peterson Andrade (UFBA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Coffe Break e Sessão de Pôsteres",
+      "dia": "2",
+      "horario": "10:20h às 10:50h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Implantação automatizada de sítios institucionais com uso de Docker, Git e Jenkins",
+      "dia": "2",
+      "horario": "14:00h às 14:20h",
+      "palestrantes": "João G. A. Martinez, Gérson B. da Silva, Diogo Soares (UFAM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2"
+    },
+	{
+      "assunto": "PoC RNP/UFG: Implantação do G Suite por meio da adesão ao serviço da Plataforma Nasnuvens/RNP",
+      "dia": "2",
+      "horario": "14:20h às 14:40h",
+      "palestrantes": "Igor R. Vieira, Jean T. Lima, Ricardo H. D. Borges (UFG)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Caso de migração de telefonia: a partir de uma plataforma proprietária para uma solução VoIP com software livre",
+      "dia": "2",
+      "horario": "14:40h às 15:00h",
+      "palestrantes": "Geovano L. Quatrin, Volnei D. Pol, Diego S. Junges (UFFS)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Análise de dados da telefonia fixa e móvel com Pentaho",
+      "dia": "2",
+      "horario": "15:00h às 15:20h",
+      "palestrantes": "Luiz Fernando Stopa Arcenio (UFGD)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Catálogo de Serviços: facilitando o acesso aos serviços de TI dentro das Instituições de Ensino Superior",
+      "dia": "2",
+      "horario": "15:20h às 15:40h",
+      "palestrantes": "Marcelo A. Santana, Italo C. L. Silva, Rômulo N. de Oliveira, Marcos J. F. Neto, João B. G. Silva (UFAL)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Melhoria Organizacional com Base no Grau de Felicidade dos Colaboradores",
+      "dia": "2",
+      "horario": "15:40h às 16:00h",
+      "palestrantes": "Teresa M M Maciel, Suzanna Sandes (UFPE)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Coffe Break",
+      "dia": "2",
+      "horario": "16:00h às 16:30h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Utilização de Serviço de Registro, Autenticação e Preservação de Documentos para a Emissão de Diplomas Digitais",
+      "dia": "3",
+      "horario": "08:30h às 08:50h",
+      "palestrantes": "Marcelo Soares, Raphael Patrício, Georgenes Lima, Jeysibel Dantas (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "O uso de Micro Serviços no desenvolvimento de sistemas nas Universidades e seus benefícios: um estudo de caso",
+      "dia": "3",
+      "horario": "08:50h às 09:10h",
+      "palestrantes": "Tales Mota Machado, Frederico Augusto de Cezar Almeida Gonçalves, Abelard Ramos Fernandes, Tiago Rodrigues Chaves (UFOP)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Gerenciamento de Logs: Implantação do Graylog como ferramenta de centralização de logs de dados na Universidade Federal do Amazonas",
+      "dia": "3",
+      "horario": "09:10h às 09:30h",
+      "palestrantes": "Crisley P. Linhares, Gerson B. da Silva, João G. A. Martinez, Vanderson da S. Rocha, Marckson M. da Silva, João B. L. Carneiro (UFAM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "DWD12 – Um método para criação de senhas seguras e memorizáveis",
+      "dia": "3",
+      "horario": "09:30h às 09:50h",
+      "palestrantes": "Cárlisson B. T. Galdino, Rômulo N. de Oliveira, Raiela Quirino Lima (UFAL)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Digitalização da Área de Trabalho – Rompendo a barreira física institucional com Horizon 7 da VMWARE",
+      "dia": "3",
+      "horario": "09:50h às 10:05h",
+      "palestrantes": "Thiago Valcesia, Plugnet – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Coffe Break",
+      "dia": "3",
+      "horario": "10:05h às 10:45h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Case de Sucesso: Sobrevivendo a uma enchente",
+      "dia": "3",
+      "horario": "10:45h às 11:00h",
+      "palestrantes": "Sergio Leandro, OST – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Lei Geral de Proteção de Dados (LGPD) – Você está preparado?",
+      "dia": "3",
+      "horario": "11:00h às 11:55",
+      "palestrantes": "José Antunes (IBM)",
+      "tipo": "Palestra",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Proteção de dados nos dias atuais",
+      "dia": "3",
+      "horario": "11:55h às 12:15h",
+      "palestrantes": "Bruno Nobrega e Daniel Matos, NTSEC Network Security – Patrocinador Diamante Plus",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Sorteio no Auditório",
+      "dia": "3",
+      "horario": "12:15h às 12:20h",
+      "palestrantes": "",
+      "tipo": "Sorteio",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Almoço Livre",
+      "dia": "3",
+      "horario": "12:20h às 13:45h",
+      "palestrantes": "",
+      "tipo": "Almoço",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Democratização do acesso à informação na UFS: APISistemas e Desenvolvimento Móvel Multiplataforma com Flutter",
+      "dia": "3",
+      "horario": "13:45h às 14:05h",
+      "palestrantes": "Alan Passos, Leonardo Bezerra (UFS)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "SisPAC – Sistema para Levantamento e Consolidação das Necessidades do PAC",
+      "dia": "3",
+      "horario": "14:05h às 14:25h",
+      "palestrantes": "Tarcila G. da Silva, Taiana B. Pereira, Julliany S. Brandão, Daniel F. Oliveira, Enoch C. P. L. da Silva (CEFET-RJ)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Portal de Integração UFG – APIs de serviços para integração de dados e sistemas",
+      "dia": "3",
+      "horario": "14:25h às 14:45h",
+      "palestrantes": "Andrey E. da Silva, Bruno N. Machado, Jhonny L. Cabral, Juarez E. de Lima, Lauro R. Gomides, Ricardo H. D. Borges (UFG)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "Aplicativo Siga UFMG: Relato de Experiência no Centro de Computação da UFMG",
+      "dia": "3",
+      "horario": "14:45h às 15:05h",
+      "palestrantes": "Patrícia Nascimento Silva , Rainer Couto (UFMG)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },	
+	{
+      "assunto": "UFPB-Sentinela: Um Sistema de Segurança para a Cidade Universitária",
+      "dia": "3",
+      "horario": "15:05h às 15:25h",
+      "palestrantes": "Iron A. de A. Júnior, Sandro L. I. Araujo, José Augusto L. B. de C. Filho, Arthur S. A. de Melo (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Ferramenta para facilitar a comunicação do Plano de Desenvolvimento Institucional",
+      "dia": "3",
+      "horario": "15:25h às 15:45hh",
+      "palestrantes": "Ana Carla Macedo da Silva, Diogo Benassuly (UFPA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Coffe Break",
+      "dia": "3",
+      "horario": "15:45h às 16:15h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "IoT em gestão",
+      "dia": "3",
+      "horario": "16:15h às 16:30h",
+      "palestrantes": "Ítalo Ruann, LTA-RH – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Transformação Digital – um olhar na gestão pública",
+      "dia": "3",
+      "horario": "16:30h às 17:30",
+      "palestrantes": " Luiz Carlos Miyadaira Ribeiro Junior (Ministério da Economia)",
+      "tipo": "Palestra",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Vantagens da adoção de um modelo de operação único em ambientes MultiCloud",
+      "dia": "3",
+      "horario": "17:30h às 17:45h",
+      "palestrantes": "Vicente Lima, Systech – Patrocinador Ouro",
+      "tipo": "Patrocinador",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Premiação Best Paper – WTICIFES e EEP",
+      "dia": "3",
+      "horario": "17:45h às 18:15h",
+      "palestrantes": "",
+      "tipo": "Premiação",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Solenidade de Encerramento Evento",
+      "dia": "3",
+      "horario": "18:15h às 18:45h",
+      "palestrantes": "",
+      "tipo": "Encerramento",
+	  "ano_evento": "2019",
+      "sala": "1" 
+    },
+	{
+      "assunto": "Utilização de Serviço de Registro, Autenticação e Preservação de Documentos para a Emissão de Diplomas Digitais",
+      "dia": "3",
+      "horario": "08:30h às 08:50h",
+      "palestrantes": "Marcelo Soares, Raphael Patrício, Georgenes Lima, Jeysibel Dantas (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Relato de Experiência: implantação de um sistema de documentação e gestão das redes de comunicação da UFMT",
+      "dia": "3",
+      "horario": "08:50h às 09:10h",
+      "palestrantes": "Tales Mota Machado, Frederico Augusto de Cezar Almeida Gonçalves, Abelard Ramos Fernandes, Tiago Rodrigues Chaves (UFOP)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Processo de gerenciamento de riscos: um relato sobre a experiência da STI/UFF",
+      "dia": "3",
+      "horario": "09:10h às 09:30h",
+      "palestrantes": "Crisley P. Linhares, Gerson B. da Silva, João G. A. Martinez, Vanderson da S. Rocha, Marckson M. da Silva, João B. L. Carneiro (UFAM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+	  "sala": "2" 
+    },	
+	{
+      "assunto": "Do Papel ao Digital – Implantação de Sistema de Protocolo Digital",
+      "dia": "3",
+      "horario": "09:30h às 09:50h",
+      "palestrantes": "Cárlisson B. T. Galdino, Rômulo N. de Oliveira, Raiela Quirino Lima (UFAL)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Coffe Break e Sessão de Pôsteres",
+      "dia": "3",
+      "horario": "10:15h às 10:45h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Integração entre LDAP e FreePBX para controle de autorização de chamadas",
+      "dia": "3",
+      "horario": "13:45h às 14:05h",
+      "palestrantes": "Eliézer de Siqueira, Weber S. R. Takaki (UNILA)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Entregando recursos para aplicações multiplataforma com a API UFRGS",
+      "dia": "3",
+      "horario": "14:05h às 14:25h",
+      "palestrantes": "Abel Corrêa Dias, Felipe Ávila dos Santos, Thiago Stein Motta (UFGRS)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Funcionalidade para logoff da autenticação do Firewall da Palo Alto na UFPI",
+      "dia": "3",
+      "horario": "14:25h às 14:45h",
+      "palestrantes": "Filipe S. Viana, Ênio R. Viana, Diego F. M. Oliveira (UFPI)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Implantação do Serviço Eduroam na UFAM",
+      "dia": "3",
+      "horario": "14:45h às 15:05h",
+      "palestrantes": "Marckson M. da Silva, Vanderson da S. Rocha, Crisley P. Linhares, Gerson B.da Silva, João B. L. Carneiro, João G. A. Martinez (UFAM)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },	
+	{
+      "assunto": "Da Virtual Machine ao Container as a Service: Tornando os Sistemas Integrados de Gestão compatíveis com os novos paradigmas de computação em nuvem",
+      "dia": "3",
+      "horario": "15:05h às 15:25h",
+      "palestrantes": "Jeysibel de Sousa Dantas, Raphael Freire de Araújo Patrício (UFPB)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Portal de Dados Abertos UFG",
+      "dia": "3",
+      "horario": "15:25h às 15:45hh",
+      "palestrantes": "Bruno N. Machado, Jhonny L. Cabral, Juarez E. de Lima, Ricardo H. D. Borges (UFG)",
+      "tipo": "Sessão Técnica",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    },
+	{
+      "assunto": "Coffe Break",
+      "dia": "3",
+      "horario": "15:45h às 16:15h",
+      "palestrantes": "",
+      "tipo": "Coffe Break",
+	  "ano_evento": "2019",
+      "sala": "2" 
+    }
+  ]
+}
