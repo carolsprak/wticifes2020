@@ -8,6 +8,7 @@ import 'package:wticifes_app/models/participante/participante.dart';
 import 'package:wticifes_app/ui/agenda/agenda_screen.dart';
 import 'package:wticifes_app/ui/atividade/atividade_screen.dart';
 import 'package:wticifes_app/ui/login/login_screen.dart';
+import 'package:wticifes_app/ui/transporte/transporte_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   
@@ -54,7 +55,7 @@ class MenuScreen extends StatelessWidget {
                   AtividadeScreen()));
               },
             ),
-            ListTile(
+            /*ListTile(
               leading: Icon(Icons.star),
               title: Text("Atividades Agendadas"),
               //subtitle: Text("mais informações..."),
@@ -65,15 +66,17 @@ class MenuScreen extends StatelessWidget {
                   builder: (BuildContext context) => 
                   AgendaScreen()));
               },
-            ),
+            ),*/
             ListTile(
-              leading: Icon(Icons.traffic),
+              leading: Icon(Icons.directions_bus),
               title: Text("Transporte"),
               //subtitle: Text("mais informações..."),
               trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                print("Item 2");
+              onTap: () {                
                 Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => 
+                  TransporteScreen()));
               },
             ),
             ListTile(

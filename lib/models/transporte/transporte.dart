@@ -4,6 +4,8 @@ import 'dart:convert' as convert;
 
 class Transporte {
   String key;
+  String dia;
+  String data;
   String local_saida;
 	String local_chegada;
 	String intinerario;
@@ -12,11 +14,13 @@ class Transporte {
   String linha;
 	String ano_evento;
 
-  Transporte(this.local_saida, this.local_chegada, this.intinerario, 
+  Transporte(this.dia, this.data, this.local_saida, this.local_chegada, this.intinerario, 
   this.horario_saida, this.horario_chegada, this.linha, this.ano_evento);
 
   Transporte.fromSnapShot(DataSnapshot snapshot):
         key = snapshot.key,
+        dia = snapshot.value['dia'],
+        data = snapshot.value['data'],
         local_saida = snapshot.value['local_saida'],
         local_chegada = snapshot.value['local_chegada'],
         intinerario = snapshot.value['intinerario'],
@@ -27,6 +31,8 @@ class Transporte {
 
   toJson(){
     return {
+      "dia" : dia,
+      "data" : data,
       "local_saida" : local_saida,
       "local_chegada" : local_chegada,
       "intinerario" : intinerario,
@@ -38,6 +44,8 @@ class Transporte {
   }
 
   Transporte.fromJson(Map<String, dynamic> json) {
+    dia = json['dia'];
+    data = json['data'];
     local_saida = json['local_saida'];
     local_chegada = json['local_chegada'];
     intinerario = json['intinerario'];
@@ -71,7 +79,7 @@ class Transporte {
 
   @override
   String toString() {
-    return 'Transporte{linha: $linha, intinerario: $intinerario}';
+    return 'Transporte{linha: $linha, intinerario: $intinerario, data: $data}';
   }
 
 }
